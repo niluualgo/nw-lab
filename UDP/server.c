@@ -28,8 +28,7 @@ int main() {
   printf("Server waiting for client...\n");
   addr_len = sizeof(client_addr);
 
-  recvfrom(sockfd, msg, sizeof(msg), 0, (struct sockaddr*)&client_addr,
-           &addr_len);
+  recvfrom(sockfd, msg, sizeof(msg), 0, (struct sockaddr*)&client_addr, &addr_len);
   printf("Client: %s\n", msg);
 
   strcpy(msg, "Response from UDP server");
