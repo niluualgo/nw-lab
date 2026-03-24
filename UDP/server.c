@@ -31,7 +31,7 @@ int main() {
   recvfrom(sockfd, msg, sizeof(msg), 0, (struct sockaddr*)&client, &addr_len);
   printf("Client: %s\n", msg);
 
-  strcpy(msg, "Response from UDP server");
+  strcpy(msg, "Response from server");
   sendto(sockfd, msg, strlen(msg), 0, (struct sockaddr*)&client, addr_len);
 
   close(sockfd);
