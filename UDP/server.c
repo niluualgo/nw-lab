@@ -6,7 +6,7 @@
 
 int main() {
   int sockfd;
-  struct sockaddr_in server_addr, client_addr;
+  struct sockaddr_in server, client;
   socklen_t addr_len;
   char msg[100];
 
@@ -16,23 +16,23 @@ int main() {
     exit(1);
   }
 
-  server_addr.sin_family = AF_INET;
-  server_addr.sin_port = htons(8080);
-  server_addr.sin_addr.s_addr = INADDR_ANY;
+  server.sin_family = AF_INET;
+  server.sin_port = htons(3002);
+  server.sin_addr.s_addr = INADDR_ANY;
 
-  if (bind(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
+  if (bind(sockfd, (struct sockaddr*)&server, sizeof(server)) < 0) {
     printf("Bind failed!\n");
     exit(1);
   }
 
   printf("Server waiting for client...\n");
-  addr_len = sizeof(client_addr);
+  addr_len = sizeof(client);
 
-  recvfrom(sockfd, msg, sizeof(msg), 0, (struct sockaddr*)&client_addr, &addr_len);
+  recvfrom(sockfd, msg, sizeof(msg), 0, (struct sockaddr*)&client, &addr_len);
   printf("Client: %s\n", msg);
 
   strcpy(msg, "Response from UDP server");
-  sendto(sockfd, msg, strlen(msg), 0, (struct sockaddr*)&client_addr, addr_len);
+  sendto(sockfd, msg, strlen(msg), 0, (struct sockaddr*)&client, addr_len);
 
   close(sockfd);
   return 0;
