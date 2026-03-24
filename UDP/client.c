@@ -17,24 +17,19 @@ int main() {
   }
 
   server.sin_family = AF_INET;
-  server.sin_port = htons(5050);
+  server.sin_port = htons(3002);
   server.sin_addr.s_addr = inet_addr("127.0.0.1");
-
-  if (bind(sockfd, (struct sockaddr*)&server, sizeof(server)) < 0) {
-    printf("Bind failed!\n");
-    exit(1);
-  }
 
   addr_len = sizeof(server);
 
   // send msg to server
   strcpy(msg, "Hello from client");
-  sendto(sockfd, msg, strlen(msg), 0, (struct sockaddr*) &server, addr_len);
+  sendto(sockfd, msg, strlen(msg), 0, (struct sockaddr*)&server, addr_len);
 
   // recv response from server
-  recvfrom(sockfd, msg, sizeof(msg), 0, (struct sockaddr*) &server, &addr_len);
+  recvfrom(sockfd, msg, sizeof(msg), 0, (struct sockaddr*)&server, &addr_len);
   printf("Server: %s\n", msg);
-  
+
   close(sockfd);
   return 0;
 }
