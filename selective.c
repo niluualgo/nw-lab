@@ -22,9 +22,11 @@ int main() {
   int r = rand() % n + 1;
   p[r].ack = 'n';
   printf("Packet number %d is not received\n", r);
+  
   printf("\nResending packet %d...", r);
   sleep(2);
   p[r].ack = 'y';
+  
   printf("\nThe received packet is %d\n", p[r].data);
   puts("All packets sent successfully!");
   return 0;
