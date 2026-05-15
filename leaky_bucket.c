@@ -12,7 +12,7 @@ int main() {
 
   int store = 0;
   while (n > 0) {
-    printf("Enter incoming packet size: ");
+    printf("\nEnter incoming packet size: ");
     int incoming;
     scanf("%d", &incoming);
     int rem = size - store;
