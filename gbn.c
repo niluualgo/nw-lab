@@ -22,7 +22,7 @@ int main() {
     scanf("%d", &ack);
     if (ack == -1) {
       printf("Error occured! Retransmitting from frame %d\n", base);
-    } else if (ack >= base) {
+    } else {
       printf("ACK received for frame %d\n", ack);
       base = ack + 1;
     }
