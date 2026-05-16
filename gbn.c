@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+void main() {
   printf("Enter total no. of frames: ");
   int n;
   scanf("%d", &n);
@@ -29,5 +29,4 @@ int main() {
     }
   }
   printf("\nAll frames transmitted successfully\n");
-  return 0;
 }
