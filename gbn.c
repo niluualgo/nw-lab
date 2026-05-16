@@ -4,11 +4,6 @@ int main() {
   printf("Enter total no. of frames: ");
   int n;
   scanf("%d", &n);
-  int frames[n];
-  for (int i = 0; i < n; ++i) {
-    frames[i] = i;
-  }
-
   printf("Enter window size: ");
   int w;
   scanf("%d", &w);
@@ -20,7 +15,7 @@ int main() {
   while (base < n) {
     printf("\nSending frames: ");
     for (int i = base; i < base + w && i < n; ++i) {
-      printf("%d ", frames[i]);
+      printf("%d ", i);
     }
     printf("\nEnter last ACK received (-1 for error): ");
     int ack;
