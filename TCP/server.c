@@ -15,7 +15,6 @@ int main() {
 
   bind(fd, (struct sockaddr*)&s, sizeof(s));
   listen(fd, 20);
-
   int tmpfd = accept(fd, NULL, NULL);
 
   while (1) {
