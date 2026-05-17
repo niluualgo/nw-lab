@@ -18,7 +18,7 @@ int main() {
   int tmpfd = accept(fd, NULL, NULL);
 
   while (1) {
-    recv(tmpfd, msg, sizeof(msg), 0);
+    recv(tmpfd, msg, 100, 0);
     printf("\nMessage got from client: %s", msg);
     printf("Enter data to send to client: ");
 
