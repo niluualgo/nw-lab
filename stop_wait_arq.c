@@ -5,7 +5,7 @@ int main() {
   printf("Enter total no. of frames: ");
   scanf("%d", &n);
 
-  puts("--- STOP AND WAIT ARQ ---");
+  printf("\n--- STOP AND WAIT ARQ ---\n");
   int i = 0, seq = 0;
   while(i < n) {
     printf("\nSending frame %d with seq number %d\n", i+1, seq);
