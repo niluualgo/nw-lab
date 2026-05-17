@@ -25,7 +25,7 @@ int main() {
 
     fgets(msg, 100, stdin);
     if (strncmp(msg, "end", 3) == 0) break;
-    send(tmpfd, msg, sizeof(msg), 0);
+    send(tmpfd, msg, 100, 0);
   }
 
   close(tmpfd);
