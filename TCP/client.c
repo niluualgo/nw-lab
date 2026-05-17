@@ -6,12 +6,12 @@
 int main() {
   char msg[100];
   int fd = socket(AF_INET, SOCK_STREAM, 0);
-  struct sockaddr_in client = {
+  struct sockaddr_in c = {
       .sin_family = AF_INET,
       .sin_port = htons(3004),
   };
 
-  connect(fd, (struct sockaddr*)&client, sizeof(client));
+  connect(fd, (struct sockaddr*)&c, sizeof(c));
 
   while (1) {
     printf("\nEnter data to send to server: ");
