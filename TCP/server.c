@@ -24,9 +24,7 @@ int main() {
     printf("Enter data to send to client: ");
 
     fgets(msg, 100, stdin);
-    if (strncmp(msg, "end", 3) == 0) {
-      break;
-    }
+    if (strncmp(msg, "end", 3) == 0) break;
     send(tmpfd, msg, sizeof(msg), 0);
   }
 
