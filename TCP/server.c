@@ -10,7 +10,7 @@ int main() {
   struct sockaddr_in s = {
       .sin_family = AF_INET,
       .sin_addr.s_addr = inet_addr("127.0.0.1"),
-      .sin_port = htons(3003),
+      .sin_port = htons(3004),
   };
 
   bind(fd, (struct sockaddr*)&s, sizeof(s));
@@ -20,7 +20,7 @@ int main() {
 
   while (1) {
     recv(tmpfd, msg, sizeof(msg), 0);
-    printf("Message got from client: %s", msg);
+    printf("\nMessage got from client: %s", msg);
     printf("Enter data to send to client: ");
 
     fgets(msg, 100, stdin);
