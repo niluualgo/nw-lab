@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
   printf("Enter total no. of frames: ");
   int n;
   scanf("%d", &n);
