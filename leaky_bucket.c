@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
   int size, out_rate, n;
   printf("Enter bucket size: ");
   scanf("%d", &size);
